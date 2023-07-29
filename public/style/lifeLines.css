@@ -1,0 +1,64 @@
+.div-life-lines {
+  background-color: rgba(0, 0, 0, 0.4);
+  /* background-image: url("../assets/img/buttons/btn-normal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center; */
+  width: 22vw;
+
+  height: 8vh;
+  position: absolute;
+  top: 47vh;
+  left: 39vw;
+  display: flex;
+  padding: 1vh;
+  visibility: hidden;
+}
+
+.life-line {
+  width: 8vw;
+  max-height: 8vh;
+  justify-content: space-between;
+  flex-grow: 0;
+}
+
+#life-line-5050 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+#life-line-paf {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+#life-line-ata {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+.fifty-fifty-normal {
+  background-image: url("../assets/img/lifeLines/Classic5050.png");
+}
+.fifty-fifty-used {
+  background-image: url("../assets/img/lifeLines/Classic5050used.png");
+}
+
+.paf-normal {
+  background-image: url("../assets/img/lifeLines/ClassicPAF.png");
+}
+.paf-used {
+  background-image: url("../assets/img/lifeLines/ClassicPAFused.png");
+}
+
+.ata-normal {
+  background-image: url("../assets/img/lifeLines/ClassicATA.png");
+}
+.ata-used {
+  background-image: url("../assets/img/lifeLines/ClassicATAused.png");
+}

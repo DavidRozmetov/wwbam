@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <link rel="stylesheet" type="text/css" href="style/quiz.css" />
+    <link rel="stylesheet" type="text/css" href="style/score.css" />
+    <link rel="stylesheet" type="text/css" href="style/lifeLines.css" />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/webcam-easy@1.0.5/dist/webcam-easy.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="bg-main">
+      <video id="webCam" autoplay playsin1ne></video>
+      <audio src="assets/audio/1-5_questions.mp3" id="level-1-5"></audio>
+      <audio src="assets/audio/11-15 Question.mp3" id="level-11-15"></audio>
+      <audio src="assets/audio/6 Question.mp3" id="level-6-10"></audio>
+      <audio src="assets/audio/6 Let's Play.mp3" id="6-let's-play"></audio>
+      <audio src="assets/audio/6 Final Answer.mp3" id="final-answer"></audio>
+      <audio src="assets/audio/15 win.mp3" id="15-win"></audio>
+      <audio src="assets/audio/5 win.mp3" id="level-up"></audio>
+      <audio src="assets/audio/8 Win.mp3" id="correct"></audio>
+      <audio src="assets/audio/6 Lose .mp3" id="lose"></audio>
+      <audio src="assets/audio/8 Let's Play.mp3" id="10-let's-play"></audio>
+      <audio src="assets/audio/Full Theme.mp3" id="full-theme"></audio>
+      <audio src="assets/audio/ata.mp3" id="music-ata"></audio>
+      <audio src="assets/audio/50-50.mp3" id="music-ff"></audio>
+
+      <canvas id="canvas"></canvas>
+      <div id="overlay"></div>
+      <div class="div-screen"></div>
+
+      <!-- scoreboard -->
+      <div class="div-score-board" id="div-score-board">
+        <ol class="ol-scores" reversed>
+          <li class="li-scores li-orange li-passive" id="li-score-15">1000</li>
+          <li class="li-scores li-white li-passive" id="li-score-14">700</li>
+          <li class="li-scores li-white li-passive" id="li-score-13">500</li>
+          <li class="li-scores li-white li-passive" id="li-score-12">400</li>
+          <li class="li-scores li-white li-passive" id="li-score-11">300</li>
+          <li class="li-scores li-orange li-passive" id="li-score-10">200</li>
+          <li class="li-scores li-white li-passive" id="li-score-9">100</li>
+          <li class="li-scores li-white li-passive" id="li-score-8">50</li>
+          <li class="li-scores li-white li-passive" id="li-score-7">40</li>
+          <li class="li-scores li-white li-passive" id="li-score-6">30</li>
+          <li class="li-scores li-orange li-passive" id="li-score-5">20</li>
+          <li class="li-scores li-white li-passive" id="li-score-4">10</li>
+          <li class="li-scores li-white li-passive" id="li-score-3">5</li>
+          <li class="li-scores li-white li-passive" id="li-score-2">2</li>
+          <li class="li-scores li-white li-active" id="li-score-1">1</li>
+        </ol>
+      </div>
+      <!-- Quiz -->
+      <div class="div-quiz" id="div-quiz">
+        <hr class="question-line" />
+        <div class="div-question" id="div-question">
+          <p id="text-question" class="text-question text">
+            What is the capital of Thailand
+          </p>
+        </div>
+        <hr class="options-line-1" />
+        <hr class="options-line-2" />
+        <div class="options" id="div-options">
+          <div
+            class="option option-left option-a option-regular"
+            id="div-option-a"
+          >
+            <span class="option-name">A: </span>
+            <p class="text text-option text-option-a" id="text-option-a">
+              Bangkok
+            </p>
+          </div>
+          <div
+            class="option option-right option-b option-regular"
+            id="div-option-b"
+          >
+            <span class="option-name">B: </span>
+            <p class="text text-option text-option-b" id="text-option-b">
+              Chian gmai
+            </p>
+          </div>
+          <div
+            class="option option-left option-c option-regular"
+            id="div-option-c"
+          >
+            <span class="option-name">C: </span>
+            <p class="text text-option text-option-c" id="text-option-c">
+              Roi Et
+            </p>
+          </div>
+          <div
+            class="option option-right option-d option-regular"
+            id="div-option-d"
+          >
+            <span class="option-name">D: </span>
+            <p class="text text-option text-option-d" id="text-option-d">
+              Chantaburi
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="label" id="div-label">
+        <h2 id="text-label" class="text-label">Baibua</h2>
+      </div>
+      <!-- lifeLines -->
+
+      <div class="div-life-lines" id="div-life-lines">
+        <div class="life-line" id="life-line-5050"></div>
+        <div class="life-line" id="life-line-paf"></div>
+        <div class="life-line" id="life-line-ata"></div>
+      </div>
+      <div class="div-paf-video">
+        <video
+          src="assets/video/pap.mp4"
+          id="paf-video"
+          class="paf-video"
+        ></video>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/bg-webcam.js"></script>
+    <script type="text/javascript" src="js/tools.js"></script>
+    <script type="text/javascript" src="js/gamePlay.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student List</title>
+  </head>
+  <body>
+    <h1>Student List</h1>
+    <form>
+      <label for="student-name">Add a student:</label>
+      <input type="text" id="student-name" />
+      <button type="button" id="add-student">Add</button>
+    </form>
+    <ul id="student-list"></ul>
+    <script>
+      // Get the students from local storage
+      const students = JSON.parse(localStorage.getItem("students")) || [];
+
+      // Get the student list element
+      const studentList = document.getElementById("student-list");
+
+      // Function to display the students
+      function displayStudents() {
+        // Clear the student list
+        studentList.innerHTML = "";
+
+        // Loop through the students
+        for (let i = 0; i < students.length; i++) {
+          // Create a list item for the student
+          const li = document.createElement("li");
+          li.innerHTML = students[i];
+
+          // Create a delete button for the student
+          const deleteButton = document.createElement("button");
+          deleteButton.innerHTML = "X";
+          deleteButton.addEventListener("click", function () {
+            // Remove the student from the array
+            students.splice(i, 1);
+
+            // Update the local storage
+            localStorage.setItem("students", JSON.stringify(students));
+
+            // Re-display the students
+            displayStudents();
+          });
+
+          // Add the delete button to the list item
+          li.appendChild(deleteButton);
+
+          // Add the list item to the student list
+          studentList.appendChild(li);
+        }
+      }
+
+      // Display the students when the page loads
+      displayStudents();
+
+      // Get the add student button
+      const addStudentButton = document.getElementById("add-student");
+
+      // Add a student when the add student button is clicked
+      addStudentButton.addEventListener("click", function () {
+        // Get the student name from the input field
+        const studentName = document.getElementById("student-name").value;
+
+        // Add the student to the array
+        students.push(studentName);
+
+        // Update the local storage
+        localStorage.setItem("students", JSON.stringify(students));
+
+        // Clear the input field
+        document.getElementById("student-name").value = "";
+
+        // Re-display the students
+        displayStudents();
+      });
+
+      // Add a student when the "Enter" key is pressed
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          // Get the student name from the input field
+          const studentName = document.getElementById("student-name").value;
+
+          // Add the student to the array
+          students.push(studentName);
+
+          // Update the local storage
+          localStorage.setItem("students", JSON.stringify(students));
+
+          // Clear the input field
+          document.getElementById("student-name").value = "";
+
+          // Re-display the students
+          displayStudents();
+        }
+      });
+    </script>
+  </body>
+</html>

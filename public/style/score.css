@@ -1,0 +1,34 @@
+.div-score-board {
+  height: 50vh;
+  width: 15vw;
+  top: 7vh;
+  right: 3vw;
+  position: absolute;
+
+  padding-left: 2vw;
+
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
+  visibility: hidden;
+}
+.ol-scores {
+  line-height: 1.3em;
+}
+
+.li-scores {
+  padding-left: 1.2vw;
+  width: 7vw;
+}
+.li-orange {
+  color: orange;
+  font-weight: bold;
+}
+.li-active {
+  list-style-type: disc;
+  background-repeat: no-repeat;
+  font-weight: bolder;
+  background-color: orange;
+  max-width: 5vw;
+}

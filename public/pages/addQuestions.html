@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Questions</title>
+    <link rel="stylesheet" href="../style/addQuestions.css" />
+  </head>
+  <body>
+    <div class="div-questions" id="div-questions">
+      <ol class="ol-questions" id="ol-questins"></ol>
+    </div>
+    <form class="add-form">
+      <label for="student-name">Student Name</label>
+      <select id="student-select">
+        <option value=""></option>
+      </select>
+      <br />
+      <div class="div-questions" id="div-questions">
+        <div class="div-question" id="div-question">
+          <label for="question"> Question </label>
+          <select id="select-level"></select>
+          <textarea name="question" id="question" rows="2"></textarea>
+          <div class="div-options">
+            <input type="radio" id="radio-a" value="a" name="correct-answer" />
+            <textarea
+              name="option"
+              class="option"
+              id="option-a"
+              rows="1"
+            ></textarea>
+            <input type="radio" id="radio-b" value="b" name="correct-answer" />
+            <textarea
+              name="option"
+              class="option"
+              id="option-b"
+              rows="1"
+            ></textarea>
+            <input type="radio" id="radio-c" value="c" name="correct-answer" />
+
+            <textarea
+              name="option"
+              class="option"
+              id="option-c"
+              rows="1"
+            ></textarea>
+            <input type="radio" id="radio-d" value="d" name="correct-answer" />
+            <textarea
+              name="option"
+              class="option"
+              id="option-d"
+              rows="1"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <button id="btn-add" class="btn-add">Add</button>
+    </form>
+    <script>
+      const select = document.getElementById("student-select");
+
+      // Get the students from local storage
+      const students = JSON.parse(localStorage.getItem("students")) || [];
+
+      // Loop through the students
+      for (let i = 0; i < students.length; i++) {
+        // Create an option element for the student
+        const option = document.createElement("option");
+        option.value = students[i];
+        option.innerHTML = students[i];
+
+        // Add the option to the select element
+        select.appendChild(option);
+      }
+    </script>
+    <script src="../js/addQuestions.js"></script>
+  </body>
+</html>
